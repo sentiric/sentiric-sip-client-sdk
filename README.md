@@ -1,35 +1,34 @@
-# Sentiric SIP Client SDK
+# 📱 Sentiric SIP Client SDK
 
-**Description:** A client SDK for connecting to the Sentiric SIP Server, enabling SIP communication (softphone, mobile applications, WebRTC in browsers).
+[![Status](https://img.shields.io/badge/status-vision-lightgrey.svg)]()
 
-**Core Responsibilities:**
-*   Implementing the SIP protocol to register with `sentiric-sip-server`, make, and receive calls.
-*   Handling RTP/SRTP media stream sending and receiving.
-*   Providing a user-friendly API for developers to integrate SIP functionality into their applications.
-*   (If applicable) Implementing WebRTC for browser-based real-time communication.
+**Sentiric SIP Client SDK**, harici uygulamaların (web, mobil) Sentiric platformuyla SIP protokolü üzerinden sesli iletişim kurmasını sağlayan bir istemci kütüphanesidir.
 
-**Technologies:**
-*   JavaScript/TypeScript (for WebRTC/Web SDK)
-*   Swift (for iOS SDK) / Kotlin (for Android SDK)
-*   SIP/WebRTC libraries for chosen language.
+**Bu, çalışan bir servis değil, diğer uygulamalara entegre edilmek üzere tasarlanmış bir kütüphanedir.**
 
-**API Interactions (As a Protocol Client):**
-*   Communicates directly with `sentiric-sip-server` via SIP and RTP/SRTP protocols.
+## 🎯 Temel Sorumluluklar (Vizyon)
 
-**Local Development:**
-1.  Clone this repository: `git clone https://github.com/sentiric/sentiric-sip-client-sdk.git`
-2.  Navigate into the directory: `cd sentiric-sip-client-sdk`
-3.  Install dependencies: `npm install` (for JS/TS) or relevant build tools for native languages.
-4.  Run tests or a sample application: `npm test` or `npm run example`.
+*   **SIP Protokolü Yönetimi:** `sentiric-sip-gateway-service`'e kayıt olma (`REGISTER`), çağrı başlatma (`INVITE`) ve çağrı alma işlemlerini yönetir.
+*   **Medya Akışı (RTP/SRTP):** Cihazın mikrofonundan gelen ses akışını şifreleyerek platforma gönderir ve platformdan gelen ses akışını hoparlörde çalar.
+*   **WebRTC Desteği (JavaScript için):** Tarayıcı tabanlı uygulamalar için WebRTC standardını kullanarak SIP iletişimini mümkün kılar.
+*   **Geliştirici Dostu API:** `connect()`, `makeCall()`, `hangup()`, `onIncomingCall` gibi basit ve anlaşılır bir API sunarak entegrasyonu kolaylaştırır.
 
-**Configuration:**
-Refer to SDK documentation and sample code for client-side configuration, including SIP server details and authentication.
+## 🛠️ Teknoloji Yığını (Planlanan)
 
-**Deployment:**
-Distributed as a package (npm, Maven, Cocoapods) or compiled executable/library.
+*   **Web:** TypeScript, `JsSIP` veya benzeri bir WebRTC SIP kütüphanesi.
+*   **iOS:** Swift
+*   **Android:** Kotlin
 
-**Contributing:**
-We welcome contributions! Please refer to the [Sentiric Governance](https://github.com/sentiric/sentiric-governance) repository for coding standards and contribution guidelines.
+## 🔌 API Etkileşimleri
 
-**License:**
-This project is licensed under the [MIT License](LICENSE).
+*   **Protokol İletişimi:**
+    *   `sentiric-sip-gateway-service`: SIP (sinyalleşme) ve RTP/SRTP (medya) için doğrudan iletişim kurar.
+
+## 🤝 Katkıda Bulunma
+
+Bu servis henüz geliştirme aşamasında olmasa da, fikirlerinizi ve önerilerinizi `sentiric-governance` reposunda bir `Issue` açarak paylaşabilirsiniz.
+
+---
+## 🏛️ Anayasal Konum
+
+Bu servis, [Sentiric Anayasası'nın (v11.0)](https://github.com/sentiric/sentiric-governance/blob/main/docs/blueprint/Architecture-Overview.md) **Zeka & Orkestrasyon Katmanı**'nda yer alan merkezi bir bileşendir.
